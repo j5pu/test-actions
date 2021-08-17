@@ -13,9 +13,9 @@ jobs:
       - name: Set COMMIT_USER_ID - Curl API
         id: commit_user_id
         run: |
-          COMMIT_USER_ID="$( curl --request GET \
-            --url "${GITHUB_API_URL}/users/${{ github.repository_owner }}"
-            --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'
+          COMMIT_USER_ID="$( curl -s --request GET \
+            --url "${GITHUB_API_URL}/users/${{ github.repository_owner }}" \
+            --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             --header 'content-type: application/json' | grep '"id"' | awk '{print $2}' | sed 's/,//' )"
           echo "::set-output name=COMMIT_USER_ID::${COMMIT_USER_ID}"
       - name: Get COMMIT_USER_ID
