@@ -12,6 +12,6 @@ jobs:
     steps:
       - name: Set selected color
         run: echo '::set-output name=SELECTED_COLOR::green'
-        id: random-color-generator
+        id: selected-color
       - name: Get color
-        run: echo "The selected color is ${{ steps.step-output.outputs.SELECTED_COLOR }}"
+        run: echo "The selected color is ${{ steps.selected-color.outputs.SELECTED_COLOR }}"
