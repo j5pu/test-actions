@@ -1,0 +1,21 @@
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  var-env:
+    runs-on: ubuntu-latest
+    name: var-env
+
+    env:
+      URL_USER_API: ${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}
+      USER: homebrew-releaser[bot]
+      ID: XXXXX
+      EMAIL: ${{ ID }${{ USER }}@users.noreply.github.com
+
+    steps:
+      - run: echo "ID=$ID"  # env in run in UNIX format $ID
+      - run: echo "USER=$USER"
+      - run: echo "EMAIL='${EMAIL}'"
+      - run: echo "${{ env }}"

@@ -1,0 +1,22 @@
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  user-id-request-action:
+    runs-on: ubuntu-latest
+    name: user-id-request-action
+    steps:
+      - name: User ID - Octokit Request Action API
+        uses: octokit/request-action@v2.x
+        id: get-id-request-action
+        with:
+          route: GET /users/${{ github.repository_owner }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: echo result
+        run: echo "${{steps.user-id-request-action.outputs.result.id}}"
+      - name: Set ID
+        env:
+          ID: ${{steps.user-id-request-action.outputs.result.id}}

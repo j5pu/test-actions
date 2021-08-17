@@ -1,0 +1,12 @@
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  var-github:
+    runs-on: ubuntu-latest
+    name: var-github
+
+    steps:
+      - run: echo "${{ github }}"

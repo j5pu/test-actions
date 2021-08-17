@@ -1,0 +1,21 @@
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  user-id-github-script:
+    runs-on: ubuntu-latest
+    name: user-id-github-script
+    steps:
+      - name: User ID - GitHub Java Script API
+        uses: actions/github-script@v4
+        id: get-id-github-script
+        with:
+          script: |
+            github.users.getByUsername({
+              user: 'j5pu',
+            })["id"];
+      - name: Set ID
+        env:
+          ID: ${{steps.get-id-github-script.outputs.result}}

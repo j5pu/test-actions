@@ -1,0 +1,16 @@
+# https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  intro:
+    runs-on: ubuntu-latest
+    name: intro
+    steps:
+      - name: Set selected color
+        run: echo '::set-output name=SELECTED_COLOR::green'
+        id: random-color-generator
+      - name: Get color
+        run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"

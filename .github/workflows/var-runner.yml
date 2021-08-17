@@ -1,0 +1,12 @@
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  var-runner:
+    runs-on: ubuntu-latest
+    name: var-job
+
+    steps:
+      - run: echo "${{ runner }}"

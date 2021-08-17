@@ -1,0 +1,38 @@
+# https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  test-sh:
+    runs-on: ubuntu-latest
+    name: test-sh
+    steps:
+      - name: Run build script
+        run: ./.github/scripts/test.sh
+        shell: bash
+
+  upload-file:
+    runs-on: ubuntu-latest
+    name: upload-file
+    steps:
+      - shell: bash
+        run: |
+          expr 1 + 1 > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v2
+        with:
+          name: output-log-file  # upload with this name
+          path: output.log
+
+  download-file:
+    runs-on: ubuntu-latest
+    name: download-file
+    steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: output-log-file  # default download with this name in the workspace directory. can use path:
+      - name: cat output.log
+        run: cat output-log-file

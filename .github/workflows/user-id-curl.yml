@@ -1,0 +1,25 @@
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  user-id-curl:
+    runs-on: ubuntu-latest
+    name: user-id-curl
+    env:
+      URL_USER_API: ${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}
+
+    steps:
+      - name: User ID - Curl API
+        uses: actions/github-script@v4
+        id: get-id-curl
+        run: |
+          curl --request GET \
+            --url "${URL_USER_API}"
+            --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'
+            --header 'content-type: application/json' | grep '"id"' | awk '{print $2}' | sed 's/,//'
+      - name: Set ID
+        run: echo "ID=${ID}"
+        env:
+          ID: ${{ steps.get-id-curl.outputs }}
