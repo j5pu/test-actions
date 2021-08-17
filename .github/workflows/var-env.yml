@@ -18,7 +18,7 @@ jobs:
         run: echo "${{ github.event.repository.owner.id }}"
 
       - name: Echo Commit User ID
-        run: echo "${{ steps.commit-user-id.outputs }}"
+        run: echo "${{ steps.commit-user-id }}"
 
       - name: Create env vars
         env:
