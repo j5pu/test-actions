@@ -16,7 +16,7 @@ jobs:
       - name: Create env vars
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          URL_USER_API: ${{ env.GITHUB_API_URL }}
+#          URL_USER_API: ${{ env.GITHUB_API_URL }}
 #          URL_USER_API: ${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}
 #          ID: ${{ toJSON(github).event.repository.owner.id }}
 #          EMAIL: ${{ ID }${{ USER }}@users.noreply.github.com
