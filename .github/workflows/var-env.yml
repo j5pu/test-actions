@@ -10,22 +10,19 @@ jobs:
     name: var-env
 
     env:
-      USER: homebrew-releaser[bot]
+      COMMIT_USER: homebrew-releaser[bot]
 
     steps:
       - name: Create env vars
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: echo "GITHUB_TOKEN=$GITHUB_TOKEN"
-
-#          URL_USER_API: ${{ env.GITHUB_API_URL }}
-#          URL_USER_API: ${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}
-#          ID: ${{ toJSON(github).event.repository.owner.id }}
-#          EMAIL: ${{ ID }${{ USER }}@users.noreply.github.com
-      - run: echo "URL_USER_API=$URL_USER_API"
-      - run: echo "ID=$ID"  # env in run in UNIX format $ID
-      - run: echo "USER=$USER"
-      - run: echo "EMAIL='${EMAIL}'"
+          COMMIT_ID: ${{ toJSON(github).event.repository.owner.id }}
+          COMMIT_EMAIL: ${{ COMMIT_ID }${{ COMMIT_USER }}@users.noreply.github.com
+          URL_USER_API: ${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}
+        run: |
+          echo "COMMIT_EMAIL=$COMMIT_EMAIL"
+          echo "COMMIT_ID=$COMMIT_ID"
+          echo "COMMIT_USER=$COMMIT_USER"
+          echo "URL_USER_API=$URL_USER_API"
       - name: Dump Env context
         env:
           ENV: ${{ toJSON(env) }}
