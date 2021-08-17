@@ -18,7 +18,7 @@ jobs:
             const result = await github.users.getByUsername({
               username: 'j5pu',
             })
-            console.log(result)
+            console.log(result.data.id)
             return result
       - name: Set ID
         run: echo "${{ steps.commit_user_id.outputs }}"
