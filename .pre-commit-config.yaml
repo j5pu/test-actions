@@ -4,7 +4,6 @@
   hooks:
     - id: gh-upload-secrets
       name: gh-upload-secrets
-      entry: ./script/gh-set-all-secrets.sh
+      entry: ./scripts/gh-set-all-secrets.sh
       language: script
-      types: [python]
       pass_filenames: false
