@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     name: var-env
 
-    env:
-      USER: homebrew-releaser[bot]
+#    env:
+#      USER: homebrew-releaser[bot]
 
     steps:
       - name: Create env vars
