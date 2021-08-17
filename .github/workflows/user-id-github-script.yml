@@ -15,7 +15,7 @@ jobs:
         with:
           result-encoding: string
           script: |
-            return github.users.getByUsername({
+            github.users.getByUsername({
               username: 'j5pu',
             })
       - name: Set ID
