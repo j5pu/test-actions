@@ -27,7 +27,7 @@ jobs:
 
       - name: env result
         env:
-          ENV: ${{ steps.user-id-request-action.outputs.data.id }}
+          ENV: ${{ steps.user-id-request-action.outputs.data }}
         run: echo "${ENV}"
 
       - name: echo result
