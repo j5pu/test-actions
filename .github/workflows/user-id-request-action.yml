@@ -9,6 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     name: user-id-request-action
     steps:
+      - uses: octokit/request-action@v2.x
+        id: get_latest_release
+        with:
+          route: GET /repos/{owner}/{repo}/releases/latest
+          owner: octokit
+          repo: request-action
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: "echo latest release: ${{ steps.get_latest_release.outputs.data }}"
+
       - name: User ID - Octokit Request Action API
         uses: octokit/request-action@v2.x
         id: get-id-request-action
@@ -18,6 +28,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: echo result
         run: echo "${{ steps.user-id-request-action.outputs.data.id }}"
-#      - name: Set ID
-#        env:
-#          ID: ${{steps.user-id-request-action.outputs.result.id}}
