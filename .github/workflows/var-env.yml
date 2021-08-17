@@ -15,9 +15,11 @@ jobs:
     steps:
       - name: Create env vars
         env:
-          URL_USER_API: ${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}
-          ID: ${{ toJSON(github).event.repository.owner.id }}
-          EMAIL: ${{ ID }${{ USER }}@users.noreply.github.com
+          URL_USER_API: ${{ GITHUB_API_URL }}
+#          URL_USER_API: ${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}
+#          ID: ${{ toJSON(github).event.repository.owner.id }}
+#          EMAIL: ${{ ID }${{ USER }}@users.noreply.github.com
+      - run: echo "URL_USER_API=$URL_USER_API"
       - run: echo "ID=$ID"  # env in run in UNIX format $ID
       - run: echo "USER=$USER"
       - run: echo "EMAIL='${EMAIL}'"
