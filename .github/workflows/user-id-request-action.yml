@@ -9,6 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     name: user-id-request-action
     steps:
+      - uses: octokit/request-action@v2.x
+        id: get_latest_release
+        with:
+          route: GET /repos/octokit/request-action/releases/latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: echo "${{ steps.get_latest_release.outputs.data }}"
+
       - name: User ID - Octokit Request Action API
         uses: octokit/request-action@v2.x
         id: user-id-request-action
