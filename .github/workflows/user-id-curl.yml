@@ -11,7 +11,6 @@ jobs:
 
     steps:
       - name: Set COMMIT_USER_ID - Curl API
-        uses: actions/github-script@v4
         id: commit_user_id
         run: |
           COMMIT_USER_ID="$( curl --request GET \
