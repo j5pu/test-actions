@@ -15,7 +15,7 @@ jobs:
         with:
           result-encoding: string
           script: |
-            const result = github.users.getByUsername({
+            const result = await github.users.getByUsername({
               username: 'j5pu',
             })
             console.log(result)
