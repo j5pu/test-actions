@@ -18,4 +18,4 @@ jobs:
               username: 'j5pu',
             })
       - name: Set ID
-        run: echo "${{ steps.commit_user_id.outputs.result.status }}"
+        run: echo "${{ steps.commit_user_id.outputs.result["status"] }}"
