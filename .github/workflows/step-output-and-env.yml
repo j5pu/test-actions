@@ -14,4 +14,4 @@ jobs:
         run: echo '::set-output name=COMMIT_USER_ID::${{ github.event.repository.owner.id }}'
         id: commit-user-id
       - name: Get COMMIT_USER_ID
-        run: echo "The selected color is ${{ steps.commit-user-id.outputs.COMMIT_USER_ID }}"
+        run: echo "${{ steps.commit-user-id.outputs.COMMIT_USER_ID }}"
