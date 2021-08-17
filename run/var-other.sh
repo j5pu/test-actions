@@ -4,7 +4,7 @@
   source "${HOME}/data/config/.gitattributes"
   gh loguser
   gh workflow run "var-other".yml
-  gh run watch -i 1 2>/dev/null
+  yes yes |gh run watch -i 1 2>/dev/null
 #  run_info="$( gh run list --workflow=var-other.yml --limit 1 | grep -v '^STATUS' | grep workflow_dispatch )"
 #  status="$( echo "${run_info}" | awk '{print $1}' )"
 #  rc="$( echo "${run_info}" | awk '{print $2}' )"
