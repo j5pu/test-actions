@@ -18,7 +18,18 @@ jobs:
         run: pwd
         shell: bash
 
-      - name: Run build script
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: list files
+        run: ls -la
+        shell: bash
+
+      - name: pwd
+        run: pwd
+        shell: bash
+
+      - name: Run test script
         run: .github/scripts/test.sh
         shell: bash
 
