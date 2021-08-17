@@ -64,5 +64,5 @@ jobs:
       - name: Check artifact directory
         run: ls -la
 
-      - name: cat output-log-file
-        run: cat output-log-file
+      - name: cat output.log
+        run: cat output.log
