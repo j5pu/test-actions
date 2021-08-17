@@ -5,9 +5,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  user-id-curl:
+  user-id-curl-jq:
     runs-on: ubuntu-latest
-    name: user-id-curl
+    name: user-id-curl-q
 
     steps:
       - name: Set COMMIT_USER_ID - Curl API

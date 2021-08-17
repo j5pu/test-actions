@@ -9,14 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     name: user-id-github-script
     steps:
-      - name: User ID - GitHub Java Script API
+      - name: Set COMMIT_USER_ID - GitHub Java Script API
         uses: actions/github-script@v4
-        id: get-id-github-script
+        id: commit_user_id
         with:
           script: |
             github.users.getByUsername({
               username: 'j5pu',
             });
-#      - name: Set ID
-#        env:
-#          ID: ${{steps.get-id-github-script.outputs.result}}
+      - name: Set ID
+        run: echo "${{ steps.commit_user_id.outputs.result }}"
