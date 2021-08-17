@@ -16,6 +16,6 @@ jobs:
           script: |
             return github.users.getByUsername({
               username: 'j5pu',
-            })
+            })["data"]
       - name: Set ID
         run: echo "${{ steps.commit_user_id.outputs.result }}"
