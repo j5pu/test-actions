@@ -4,11 +4,12 @@
   source "${HOME}/data/config/.gitattributes"
   gh loguser
   gh workflow run "user-id-curl".yml
-  yes yes |gh run watch -i 1 2>/dev/null
-#  run_info="$( gh run list --workflow=user-id-curl.yml --limit 1 | grep -v '^STATUS' | grep workflow_dispatch )"
+#  gh run watch -i 1
+  run_info="$( gh run list --workflow=user-id-curl.yml --limit 1 | grep -v '^STATUS' | grep workflow_dispatch )"
 #  status="$( echo "${run_info}" | awk '{print $1}' )"
 #  rc="$( echo "${run_info}" | awk '{print $2}' )"
-#  id="$( echo "${run_info}" | awk '{print $7}' )"
+  id="$( echo "${run_info}" | awk '{print $7}' )"
+  gh run watch "${id}"
 #  echo "status=${status}, rc=${rc} id=${id}"
 #  gh run view "${id}"
 #  open "https://github.com/j5pu/test-actions/actions/runs/${id}"
