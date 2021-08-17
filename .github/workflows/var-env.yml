@@ -10,17 +10,18 @@ jobs:
     name: var-env
 
     env:
-      URL_USER_API: ${{ GITHUB_API_URL }}
-#      URL_USER_API: ${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}
-#      USER: homebrew-releaser[bot]
-#      ID: ${{ toJSON(github).event.repository.owner.id }}
-#      EMAIL: ${{ ID }${{ USER }}@users.noreply.github.com
+      USER: homebrew-releaser[bot]
 
     steps:
+      - name: Create env vars
+        env:
+          URL_USER_API: ${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}
+          ID: ${{ toJSON(github).event.repository.owner.id }}
+          EMAIL: ${{ ID }${{ USER }}@users.noreply.github.com
       - run: echo "ID=$ID"  # env in run in UNIX format $ID
       - run: echo "USER=$USER"
       - run: echo "EMAIL='${EMAIL}'"
-      env:
-        GITHUB_CONTEXT: ${{ toJSON(github) }}
-      run: echo "$GITHUB_CONTEXT"
-      - run: echo "${{ env }}"
+      - name: Dump Env context
+        env:
+          ENV: ${{ toJSON(env) }}
+        run: echo "$ENV"
