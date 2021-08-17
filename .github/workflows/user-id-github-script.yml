@@ -19,7 +19,7 @@ jobs:
               username: 'j5pu',
             })
             console.log(result.data.id)
-            return result
+            return result.data.id
       - name: Set ID
         run: echo "${{ steps.commit_user_id.outputs }}"
 
