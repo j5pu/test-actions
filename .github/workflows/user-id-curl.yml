@@ -12,15 +12,14 @@ jobs:
       URL_USER_API: ${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}
 
     steps:
-      - name: User ID - Curl API
+      - name: Set COMMIT_USER_ID - Curl API
         uses: actions/github-script@v4
-        id: get-id-curl
+        id: commit_user_id
         run: |
-          curl --request GET \
+          COMMIT_USER_ID="$( curl --request GET \
             --url "${URL_USER_API}"
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'
-            --header 'content-type: application/json' | grep '"id"' | awk '{print $2}' | sed 's/,//'
-      - name: Set ID
-        run: echo "ID=${ID}"
-        env:
-          ID: ${{ steps.get-id-curl.outputs }}
+            --header 'content-type: application/json' | grep '"id"' | awk '{print $2}' | sed 's/,//' )"
+          echo "::set-output name=COMMIT_USER_ID::${COMMIT_USER_ID}"
+      - name: Get COMMIT_USER_ID
+        run: echo "${{ steps.commit_user_id.outputs.COMMIT_USER_ID }}"
