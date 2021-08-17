@@ -17,7 +17,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: echo result
-        run: echo "${{ steps.user-id-request-action.outputs.result.data.id }}"
+        run: echo "${{ steps.user-id-request-action.outputs.data.id }}"
 #      - name: Set ID
 #        env:
 #          ID: ${{steps.user-id-request-action.outputs.result.id}}
