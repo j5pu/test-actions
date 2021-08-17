@@ -12,7 +12,7 @@ jobs:
     env:
       URL_USER_API: ${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}
       USER: homebrew-releaser[bot]
-      ID: XXXXX
+      ID: ${{ toJSON(github).event.repository.owner.id }}
       EMAIL: ${{ ID }${{ USER }}@users.noreply.github.com
 
     steps:
