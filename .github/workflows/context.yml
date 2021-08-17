@@ -1,5 +1,7 @@
 # https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions
-on: push
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
   one:
