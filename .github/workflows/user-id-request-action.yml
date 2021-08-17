@@ -15,7 +15,7 @@ jobs:
           route: GET /repos/octokit/request-action/releases/latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: echo '${{ steps.get_latest_release.outputs.data.id }}'
+      - run: echo '${{ steps.get_latest_release.outputs.data }}'
 
       - name: User ID - Octokit Request Action API
         uses: octokit/request-action@v2.x
