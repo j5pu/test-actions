@@ -5,6 +5,7 @@
   gh loguser
   gh workflow run "var-runner".yml
 #  gh run watch -i 1
+  sleep 2
   run_info="$( gh run list --workflow=var-runner.yml --limit 1 | grep -v '^STATUS' | grep workflow_dispatch )"
 #  status="$( echo "${run_info}" | awk '{print $1}' )"
 #  rc="$( echo "${run_info}" | awk '{print $2}' )"
