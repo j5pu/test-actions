@@ -4,13 +4,12 @@
   source "${HOME}/data/config/.gitattributes"
   gh loguser
   gh workflow run "var-other".yml
-  gh run list --workflow="var-other".yml
   gh run watch -i 1 2>/dev/null
-  run_info="$( gh run list --workflow=var-other.yml --limit 1 | grep -v '^STATUS' | grep workflow_dispatch )"
-  status="$( echo "${run_info}" | awk '{print $1}' )"
-  rc="$( echo "${run_info}" | awk '{print $2}' )"
-  id="$( echo "${run_info}" | awk '{print $7}' )"
-  echo "status=${status}, rc=${rc} id=${id}"
-  gh run view "${id}"
-  open "https://github.com/j5pu/test-actions/actions/runs/${id}"
+#  run_info="$( gh run list --workflow=var-other.yml --limit 1 | grep -v '^STATUS' | grep workflow_dispatch )"
+#  status="$( echo "${run_info}" | awk '{print $1}' )"
+#  rc="$( echo "${run_info}" | awk '{print $2}' )"
+#  id="$( echo "${run_info}" | awk '{print $7}' )"
+#  echo "status=${status}, rc=${rc} id=${id}"
+#  gh run view "${id}"
+#  open "https://github.com/j5pu/test-actions/actions/runs/${id}"
 )
