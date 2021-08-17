@@ -13,15 +13,25 @@ jobs:
         uses: actions/github-script@v4
         id: commit_user_id
         with:
-#          result-encoding: string
           script: |
             const rv = await github.users.getByUsername({
               username: 'j5pu',
             })
             console.log(rv.data.id)
             return rv.data.id
-      - name: Set ID
+
+      - name: Get COMMIT_USER_ID
         run: echo "${{ steps.commit_user_id.outputs.result }}"
 
-      - name: Set ID
-        run: echo "${{ toJSON(steps.commit_user_id.outputs.result) }}"
+      - name: Set COMMIT_USER_ID - GitHub Java Script API - Simple
+        uses: actions/github-script@v4
+        id: commit_user_id_simple
+        with:
+          script: |
+            return await github.users.getByUsername({
+              username: 'j5pu',
+            })
+
+      - name: Get COMMIT_USER_ID - Simple
+        run: echo "${{ steps.commit_user_id_simple.outputs.result.data.id }}"
+
