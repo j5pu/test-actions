@@ -33,5 +33,5 @@ jobs:
             })
 
       - name: Get COMMIT_USER_ID - Simple
-        run: echo "${{ steps.commit_user_id_simple.outputs.result.data.id }}"
+        run: echo "${{ steps.commit_user_id_simple.outputs.result }}"
 
