@@ -13,15 +13,15 @@ jobs:
         uses: actions/github-script@v4
         id: commit_user_id
         with:
-          result-encoding: string
+#          result-encoding: string
           script: |
-            const result = await github.users.getByUsername({
+            const rv = await github.users.getByUsername({
               username: 'j5pu',
             })
-            console.log(result.data.id)
-            return result.data.id
+            console.log(rv.data.id)
+            return rv.data.id
       - name: Set ID
-        run: echo "${{ steps.commit_user_id.outputs }}"
+        run: echo "${{ steps.commit_user_id.outputs.result }}"
 
       - name: Set ID
         run: echo "${{ toJSON(steps.commit_user_id.outputs.result) }}"
