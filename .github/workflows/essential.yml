@@ -63,4 +63,4 @@ jobs:
           path: output.log
 
       - name: cat output.log
-        run: cat output-log-file
+        run: cat output.log
