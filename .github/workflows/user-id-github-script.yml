@@ -15,9 +15,10 @@ jobs:
         with:
           result-encoding: string
           script: |
-            github.users.getByUsername({
+            const result = github.users.getByUsername({
               username: 'j5pu',
             })
+            console.log(result)
       - name: Set ID
         run: echo "${{ steps.commit_user_id.outputs.result }}"
 
