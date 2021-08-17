@@ -15,14 +15,15 @@ jobs:
     steps:
       - name: Create env vars
         env:
-          COMMIT_ID: ${{ github.event }}
-#          COMMIT_ID: ${{ toJSON(github).event.repository.owner.id }}
+          COMMIT_ID: ${{ github.event.repository.owner.id }}
+          OWNER: ${{ toJSON(github.event.repository.owner) }}
 #          COMMIT_EMAIL: ${{ COMMIT_ID }${{ COMMIT_USER }}@users.noreply.github.com
 #          URL_USER_API: ${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}
         run: |
           echo "COMMIT_EMAIL=$COMMIT_EMAIL"
           echo "COMMIT_ID=$COMMIT_ID"
           echo "COMMIT_USER=$COMMIT_USER"
+          echo "OWNER=$OWNER"
           echo "URL_USER_API=$URL_USER_API"
       - name: Dump Env context
         env:
