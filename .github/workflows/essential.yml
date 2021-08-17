@@ -37,6 +37,9 @@ jobs:
     runs-on: ubuntu-latest
     name: upload-file
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
       - shell: bash
         run: |
           expr 1 + 1 > output.log
@@ -50,6 +53,9 @@ jobs:
     runs-on: ubuntu-latest
     name: download-file
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
       - name: Download a single artifact
         uses: actions/download-artifact@v2
         with:
