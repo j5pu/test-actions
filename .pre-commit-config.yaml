@@ -2,9 +2,9 @@
 # See https://pre-commit.com/hooks.html for more hooks
 - repo: local
   hooks:
-    -   id: gh-upload-secrets
-        name: gh-upload-secrets
-        entry: ./script/gh-upload-secrets.sh
-        language: script
-        types: [python]
-        pass_filenames: false
+    - id: gh-upload-secrets
+      name: gh-upload-secrets
+      entry: ./script/gh-set-all-secrets.sh
+      language: script
+      types: [python]
+      pass_filenames: false
