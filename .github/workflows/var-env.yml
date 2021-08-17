@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Create env vars
         env:
-          COMMIT_ID: ${{ toJSON(github).event }}
+          COMMIT_ID: ${{ toJSON(github)["event"] }}
 #          COMMIT_ID: ${{ toJSON(github).event.repository.owner.id }}
 #          COMMIT_EMAIL: ${{ COMMIT_ID }${{ COMMIT_USER }}@users.noreply.github.com
 #          URL_USER_API: ${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}
