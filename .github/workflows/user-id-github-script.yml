@@ -19,4 +19,7 @@ jobs:
               username: 'j5pu',
             })
       - name: Set ID
+        run: echo "${{ steps.commit_user_id.outputs.result }}"
+
+      - name: Set ID
         run: echo "${{ toJSON(steps.commit_user_id.outputs.result) }}"
