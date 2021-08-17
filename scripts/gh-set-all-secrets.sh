@@ -4,22 +4,20 @@ export GH_CONFIG_DIR="${HOME}/data/config/git"
 
 for i; do
   case $i in
-    --work)
-      work=true
-      gh logwork
-      ;;
+    --work) work=true ;;
     --file=) file="${i#--file=}" ;;
     *) repo="--repo ${i}"
   esac
 done
 
-if [[ -z "${work}" ]]; then
-  gh loguser
-fi
-
 file="${file:-${HOME}/data/config/.gitattributes}"
 source "${file}"
 
+if [[ -n "${work}" ]]; then
+  gh logwork
+else
+  gh loguser
+fi
 
 while read -r var; do
   #  echo "repo: ${repo}, file: ${file}, work: ${work}, var: ${var}, value: ${!var}"
