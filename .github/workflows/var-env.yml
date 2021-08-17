@@ -10,7 +10,7 @@ jobs:
     name: var-env
 
     env:
-      URL_USER_API: ${{ GITHUB_API_URL }}
+      URL_USER_API: "${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}"
 #      URL_USER_API: ${{ GITHUB_API_URL }}/users/${{ github.repository_owner }}
 #      USER: homebrew-releaser[bot]
 #      ID: ${{ toJSON(github).event.repository.owner.id }}
