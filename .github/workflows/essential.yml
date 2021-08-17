@@ -11,7 +11,7 @@ jobs:
     name: test-sh
     steps:
       - name: Run build script
-        run: ./.github/scripts/test.sh
+        run: .github/scripts/test.sh
         shell: bash
 
   upload-file:
@@ -35,5 +35,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: output-log-file  # default download with this name in the workspace directory. can use path:
+          path: output.log
+
       - name: cat output.log
         run: cat output-log-file
