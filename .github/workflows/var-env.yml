@@ -13,6 +13,13 @@ jobs:
       COMMIT_USER_NAME: homebrew-releaser[bot]
 
     steps:
+      - name: Get Commit User ID
+        id: commit-user-id
+        run: echo "${{ github.event.repository.owner.id }}"
+
+      - name: Echo Commit User ID
+        run: echo "${{ steps.jobs.outputs }}"
+
       - name: Create env vars
         env:
           COMMIT_USER_ID: ${{ github.event.repository.owner.id }}
