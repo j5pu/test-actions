@@ -6,20 +6,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  step-output-and-env:
+  commit-user-email:
     runs-on: ubuntu-latest
-    name: step-output-and-env
+    name: commit-user-email
     env:
       COMMIT_USER_NAME: homebrew-releaser[bot]
 
     steps:
-      - name: Set COMMIT_USER_ID
-        run: echo '::set-output name=COMMIT_USER_ID::${{ github.event.repository.owner.id }}'
-        id: commit-user-id
-
-      - name: Get COMMIT_USER_ID
-        run: echo "${{ steps.commit-user-id.outputs.COMMIT_USER_ID }}"
-
       - name: Set COMMIT_USER_EMAIL
         run: |
           echo "::set-output name=COMMIT_USER_EMAIL::${{ github.event.repository.owner.id }}+${COMMIT_USER_NAME}@users.noreply.github.com"

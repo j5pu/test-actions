@@ -33,10 +33,6 @@ jobs:
           echo "OWNER=$OWNER"
           echo "URL_USER_API=$URL_USER_API"
 
-      - name: Create env vars
-        id: create-env-vars
-        run: echo "COMMIT_USER_EMAIL=${{ steps.create-env-vars.COMMIT_USER_ID }+${{ COMMIT_USER_NAME }}@users.noreply.github.com"
-
       - name: Dump Job context
         env:
           ENV: ${{ toJSON(job) }}
