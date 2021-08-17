@@ -15,7 +15,7 @@ jobs:
         with:
           script: |
             github.users.getByUsername({
-              user: 'j5pu',
+              'j5pu',
             });
 #      - name: Set ID
 #        env:
