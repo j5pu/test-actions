@@ -24,7 +24,7 @@ jobs:
         id: create-env-vars
         env:
           COMMIT_USER_ID: ${{ github.event.repository.owner.id }}
-#          COMMIT_USER_EMAIL: ${{ steps.commit-user-id.env.COMMIT_USER_ID }+${{ COMMIT_USER_NAME }}@users.noreply.github.com
+          COMMIT_USER_EMAIL: ${{ steps.commit-user-id.env.COMMIT_USER_ID }+${{ COMMIT_USER_NAME }}@users.noreply.github.com
           OWNER: ${{ toJSON(github.event.repository.owner) }}
           URL_USER_API: ${{ env.GITHUB_API_URL }}/users/${{ github.repository_owner }}
         run: |
