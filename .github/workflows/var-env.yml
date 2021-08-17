@@ -25,6 +25,10 @@ jobs:
           echo "COMMIT_USER_NAME=$COMMIT_USER_NAME"
           echo "OWNER=$OWNER"
           echo "URL_USER_API=$URL_USER_API"
+      - name: Dump Job context
+        env:
+          ENV: ${{ toJSON(job) }}
+        run: echo "$job"
       - name: Dump Env context
         env:
           ENV: ${{ toJSON(env) }}
