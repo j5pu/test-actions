@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="context-dump.sh" type="BashProRunConfiguration" singleton="false">
+    <option name="scriptPath" value="$PROJECT_DIR$/run/context-dump.sh" />
+    <RunnerSettings bashdbVersion="Automatic" bashPathMapper="Automatic" RunnerId="pro.bashsupport.shDebugRunner" />
+    <method v="2" />
+  </configuration>
+</component>

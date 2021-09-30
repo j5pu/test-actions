@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="42bf7ad6-fbfd-43e2-b1a2-6db67262c2e5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/fileColors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/test-actions.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test-actions.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/gh-all-user-repos-set-all-secrets.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/gh-all-user-repos.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/gh-set-all-secrets.sh" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
-  <component name="NamedScopeManager">
-    <order>
-      <scope name="Python" />
-    </order>
-  </component>
+  <component name="ProjectId" id="1wsO0UHLMagPXqQga5F7GPKJPno" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -15,6 +30,11 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
@@ -23,7 +43,7 @@
     <property name="node.js.selected.package.jscs" value="" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.stylelint" value="/usr/local/lib/node_modules/stylelint" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.scopes" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -32,7 +52,12 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="BashSupport Pro.var-env.sh">
     <configuration default="true" type="BashProRunConfiguration">
       <RunnerSettings bashdbVersion="Automatic" bashPathMapper="Automatic" RunnerId="pro.bashsupport.shDebugRunner" />
       <method v="2" />
@@ -321,5 +346,31 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="BashSupport Pro._create-runners.sh" />
+      <item itemvalue="BashSupport Pro._setup.sh" />
+      <item itemvalue="BashSupport Pro.commit-user-email.sh" />
+      <item itemvalue="BashSupport Pro.context-dump.sh" />
+      <item itemvalue="BashSupport Pro.essential.sh" />
+      <item itemvalue="BashSupport Pro.intro.sh" />
+      <item itemvalue="BashSupport Pro.secret-user-id.sh" />
+      <item itemvalue="BashSupport Pro.step-output.sh" />
+      <item itemvalue="BashSupport Pro.user-id-curl-jq.sh" />
+      <item itemvalue="BashSupport Pro.user-id-curl.sh" />
+      <item itemvalue="BashSupport Pro.user-id-github-script.sh" />
+      <item itemvalue="BashSupport Pro.user-id-request-action.sh" />
+      <item itemvalue="BashSupport Pro.var-env.sh" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="1" Folder0="$PROJECT_DIR$/../macdev" CustomDictionaries="1" CustomDictionary0="$PROJECT_DIR$/../macdev/spanish.dic" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="42bf7ad6-fbfd-43e2-b1a2-6db67262c2e5" name="Changes" comment="" />
+      <created>1629243607733</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1629243607733</updated>
+    </task>
+    <servers />
   </component>
 </project>

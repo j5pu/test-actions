@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="user-id-github-script.sh" type="BashProRunConfiguration" singleton="false">
+    <option name="scriptPath" value="$USER_HOME$/test-actions/run/user-id-github-script.sh" />
+    <RunnerSettings bashdbVersion="Automatic" bashPathMapper="Automatic" RunnerId="pro.bashsupport.shDebugRunner" />
+    <method v="2" />
+  </configuration>
+</component>
