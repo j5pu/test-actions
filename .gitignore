@@ -2,3 +2,4 @@
 ### project_empty template
 ### project
 .env
+.DS_Store
